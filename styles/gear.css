@@ -15,6 +15,13 @@ header {
   margin-top: 80px;
 }
 /* nav section */
+.hamburger {
+  display: none;
+  font-size: 1.6rem;
+}
+#manu-toggle {
+  display: none;
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -37,23 +44,18 @@ ul li a {
   color: rgb(58, 58, 58);
   font-weight: 600;
 }
-/* ul li {
-  font-weight: 600;
-} */
+
 /* header banner section */
 .banner {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 90px;
   background-image: url(../images/Circle\ design.svg);
   background-repeat: no-repeat;
   background-position: bottom right;
 }
-.banner-left {
-}
-.banner-right {
-}
+
 .banner-left h1 {
   color: rgb(58, 58, 58);
   font-weight: 700;
@@ -176,13 +178,33 @@ footer {
 }
 
 @media (max-width: 567px) {
-  nav,
+  ul {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    width: 200px;
+  }
+  .menu-toggle:checked + .hamburger + ul {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* nav,
   ul {
     flex-direction: column;
   }
   .nav-title {
-    margin-bottom: 20px;
-  }
+    margin-bottom: 20px; */
+
   .banner {
     flex-direction: column-reverse;
     background-position: top center;
@@ -207,5 +229,19 @@ footer {
     background-color: rgb(150, 21, 21);
     color: white;
     border: none;
+  }
+  .collection-cards {
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+  .banner-2 {
+    flex-direction: column;
+    margin-left: 20px;
+  }
+  footer {
+    margin-top: 30px;
+    margin-bottom: 70px;
+    margin-left: 20px;
   }
 }
